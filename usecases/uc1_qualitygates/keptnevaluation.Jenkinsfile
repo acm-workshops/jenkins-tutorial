@@ -51,5 +51,16 @@ node {
         } else {
             echo "Not waiting for results. Please check the Keptns bridge for the details!"
         }
+        // Generating the Report so you can access the results directly in Keptns Bridge
+        publishHTML(
+            target: [
+                allowMissing         : false,
+                alwaysLinkToLastBuild: false,
+                keepAll              : true,
+                reportDir            : ".",
+                reportFiles          : 'keptn.html',
+                reportName           : "Keptn Result in Bridge"
+            ]
+        )
     }
 }
