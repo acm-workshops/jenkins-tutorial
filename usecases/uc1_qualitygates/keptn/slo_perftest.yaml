@@ -32,39 +32,7 @@
               - "<=+10%"
         warning:
           - criteria:
-              - "<=+10%"
-      - sli: rt_test_invoke
-        pass:
-          - criteria:
-              - "<=+10%"
-      - sli: rt_test_echo
-        pass:
-          - criteria:
-              - "<=+10%"
-      - sli: rt_test_version
-        pass:
-           - criteria:
-              - "<=+10%"
-      - sli: rt_test_homepage
-        pass:
-           - criteria:
-              - "<=+10%"
-      - sli: svcalls_test_invoke
-        pass:
-          - criteria:
-              - "<=+10%"
-      - sli: svcalls_test_echo
-        pass:
-          - criteria:
-              - "<=+10%"
-      - sli: svcalls_test_version
-        pass:
-           - criteria:
-              - "<=+10%"
-      - sli: svcalls_test_homepage
-        pass:
-           - criteria:
-              - "<=+10%"              
+              - "<=+10%"   
     total_score:
       pass: "90%"
       warning: "75%"
