@@ -36,39 +36,38 @@
       - sli: db_calls
         pass:
           - criteria:
-              - "<+20%"
+              - "<=+5%"
         warning:
           - criteria:
-              - ">+20%"
-
+              - ">+5%"
       - sli: non_db_calls
         pass:
           - criteria:
-              - "<=+20%"
+              - "<=+5%"
         warning:
           - criteria:
-              - ">+20%"
+              - ">+5%"
       - sli: lock_time
         pass:
           - criteria:
-              - "<=+1%"
+              - "<=+5%"
         warning:
           - criteria:
-              - ">+2%"
+              - ">+5%"
       - sli: io_time
         pass:
           - criteria:
-              - "<=+1%"
+              - "<=+5%"
         warning:
           - criteria:
-              - ">+2%"
+              - ">+5%"
       - sli: cpu_time
         pass:
           - criteria:
-              - "<=+1%"
+              - "<=+5%"
         warning:
           - criteria:
-              - ">+2%"
+              - ">+5%"
     total_score:
       pass: "70%"
       warning: "50%"
