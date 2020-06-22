@@ -17,14 +17,14 @@
         pass:
           - criteria:
             - "> 2000" # at least 1000 Calls for a basic test to pass.
-      - sli: error_rate_svc
+      - sli: error_count
         weight: 2
         pass:
           - criteria:
-              - "<=1%" # less than 1% failurerate
+              - "<=1" # less than 1% failurerate
         warning:
           - criteria:
-              - "<=2%" # more than  2% failurerate is warning
+              - "<=2" # more than 2 failed transactions is failed
       - sli: rt_svc_p50
       - sli: rt_svc_p90
         pass:
@@ -32,22 +32,22 @@
               - "<=+10%"
         warning:
           - criteria:
-              - "<=+10%"   
+              - "<=+50%"   
       - sli: db_calls
         pass:
           - criteria:
-              - "<=+1%"
+              - "<+20%"
         warning:
           - criteria:
-              - "<=+2%"
+              - ">+20%"
+
       - sli: non_db_calls
         pass:
           - criteria:
-              - "<=+1%"
-              - "<900"
+              - "<=+20%"
         warning:
           - criteria:
-              - "<=+2%"
+              - ">+20%"
       - sli: lock_time
         pass:
           - criteria:
