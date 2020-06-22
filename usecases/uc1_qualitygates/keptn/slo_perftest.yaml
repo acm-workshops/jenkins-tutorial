@@ -34,25 +34,40 @@
           - criteria:
               - "<=+10%"   
       - sli: db_calls
-        warning:  
+        pass:
           - criteria:
-            - "<=+10%"
-      - sli: non_db_calls
-        warning:  
-          - criteria:
-            - "<=+10%"
-      - sli: lock_time
-        warning:  
-          - criteria:
-            - "<=+10%"
-      - sli: io_time
-        warning:  
-          - criteria:
-            - "<=+10%"
-      - sli: cpu_time
+              - "<=+1%"
         warning:
           - criteria:
-            - "<=+10%" 
+              - "<=+2%"
+      - sli: non_db_calls
+        pass:
+          - criteria:
+              - "<=+1%"
+        warning:
+          - criteria:
+              - "<=+2%"
+      - sli: lock_time
+        pass:
+          - criteria:
+              - "<=+1%"
+        warning:
+          - criteria:
+              - "<=+2%"
+      - sli: io_time
+        pass:
+          - criteria:
+              - "<=+1%"
+        warning:
+          - criteria:
+              - "<=+2%"
+      - sli: cpu_time
+        pass:
+          - criteria:
+              - "<=+1%"
+        warning:
+          - criteria:
+              - "<=+2%"
     total_score:
       pass: "90%"
       warning: "75%"
