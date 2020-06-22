@@ -2,7 +2,7 @@
     spec_version: '0.1.0'
     comparison:
       compare_with: "single_result"
-      include_result_with_score: "pass"
+      include_result_with_score: "pass" # pass_or_warn
       aggregate_function: avg
     objectives:
       - sli: rt_svc_p95
@@ -44,7 +44,7 @@
         pass:
           - criteria:
               - "<=+1%"
-              - "<9000"
+              - "<900"
         warning:
           - criteria:
               - "<=+2%"
@@ -54,21 +54,21 @@
               - "<=+1%"
         warning:
           - criteria:
-              - "<=+2%"
+              - ">+2%"
       - sli: io_time
         pass:
           - criteria:
               - "<=+1%"
         warning:
           - criteria:
-              - "<=+2%"
+              - ">+2%"
       - sli: cpu_time
         pass:
           - criteria:
               - "<=+1%"
         warning:
           - criteria:
-              - "<=+2%"
+              - ">+2%"
     total_score:
-      pass: "90%"
-      warning: "75%"
+      pass: "70%"
+      warning: "50%"
