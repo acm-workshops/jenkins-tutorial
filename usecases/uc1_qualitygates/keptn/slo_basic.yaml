@@ -16,15 +16,15 @@
       - sli: throughput_svc
         pass:
           - criteria:
-            - ">20000"
+            - "> 1000"  # at least 1000 Calls for a basic test to pass.
       - sli: error_rate_svc
         weight: 2
         pass:
           - criteria:
-              - "<=1%"
+              - "<=1%"  # less than 1% failurerate
         warning:
           - criteria:
-              - "<=2%"
+              - "<=2%" # more than  2% failurerate is warning
       - sli: rt_svc_p50
       - sli: rt_svc_p90
         pass:
@@ -33,6 +33,10 @@
         warning:
           - criteria:
               - "<=+10%"
+      - sli: db_calls
+      - sli: non_db_calls
+      - sli: cpu_per_tx
+      
     total_score:
       pass: "90%"
       warning: "75%"

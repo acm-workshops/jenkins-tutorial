@@ -6,3 +6,6 @@ indicators:
   rt_svc_p50:     "metricSelector=builtin:service.response.time:merge(0):percentile(50)&entitySelector=tag($SERVICE),type(SERVICE)"
   rt_svc_p90:     "metricSelector=builtin:service.response.time:merge(0):percentile(90)&entitySelector=tag($SERVICE),type(SERVICE)"
   rt_svc_p95:     "metricSelector=builtin:service.response.time:merge(0):percentile(95)&entitySelector=tag($SERVICE),type(SERVICE)"
+  db_calls:       "metricSelector=builtin:service.dbChildCallCount:merge(0):sum&entitySelector=tag($SERVICE),type(SERVICE)"
+  non_db_calls:   "metricSelector=builtin:service.nonDbChildCallCount:merge(0):sum&entitySelector=tag($SERVICE),type(SERVICE)"
+  cpu_per_tx:     "metricSelector=builtin:service.cpu.perRequest:merge(0):sum&entitySelector=tag($SERVICE),type(SERVICE)"
