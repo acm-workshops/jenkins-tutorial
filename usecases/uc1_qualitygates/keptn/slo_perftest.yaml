@@ -44,6 +44,7 @@
         pass:
           - criteria:
               - "<=+1%"
+              - "<9000"
         warning:
           - criteria:
               - "<=+2%"
